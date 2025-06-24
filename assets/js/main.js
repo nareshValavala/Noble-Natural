@@ -21,41 +21,7 @@
   window.addEventListener("scroll", revealOnScroll);
   revealOnScroll(); // Initial trigger
 
-  const form = document.querySelector("form");
-    const overlay = document.getElementById("overlay");
-
-    if (form && overlay) {
-      form.addEventListener("submit", function () {
-        e.preventDefault(); // Prevent default FormSubmit redirect
-		 overlay.innerHTML = `
-        <div class="overlay-content">
-          <p>✅ Thank you! Your message has been sent.</p>
-        </div>
-      `;
-      overlay.style.display = "flex";
-
-      // Submit form manually to FormSubmit
-      fetch(form.action, {
-        method: "POST",
-        body: new FormData(form),
-        headers: { Accept: "application/json" }
-      }).then(() => {
-        form.reset();
-        setTimeout(() => {
-          overlay.style.display = "none";
-        }, 3500);
-      }).catch(() => {
-        overlay.innerHTML = `
-          <div class="overlay-content">
-            <p>⚠️ Something went wrong. Please try again later.</p>
-          </div>
-        `;
-        setTimeout(() => {
-          overlay.style.display = "none";
-        }, 3500);
-      });
-      });
-    }
+  
 });
 
 
