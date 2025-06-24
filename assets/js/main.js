@@ -14,10 +14,21 @@
         el.classList.add("visible");
       }
     });
+
+
   }
 
   window.addEventListener("scroll", revealOnScroll);
   revealOnScroll(); // Initial trigger
+
+  const form = document.querySelector("form");
+    const overlay = document.getElementById("overlay");
+
+    if (form && overlay) {
+      form.addEventListener("submit", function () {
+        overlay.style.display = "flex";
+      });
+    }
 });
 
 
