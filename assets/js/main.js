@@ -1,4 +1,7 @@
 (function ($) {
+
+    emailjs.init("lfemI6Mj5wYbdxLWu")
+  
   document.addEventListener("DOMContentLoaded", function () {
     const articles = document.querySelectorAll(".gallery article");
 
@@ -184,6 +187,7 @@
   }).trigger("resize");
 
   // EmailJS form handler (custom)
+
   const contactForm = document.getElementById("contact-form");
   if (contactForm) {
     contactForm.addEventListener("submit", function (e) {
